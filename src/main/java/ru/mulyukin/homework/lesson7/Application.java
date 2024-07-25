@@ -1,15 +1,17 @@
 package ru.mulyukin.homework.lesson7;
 
+import java.lang.reflect.Array;
+
 public class Application {
     public static void main(String[] args) {
-        int[][] array = {{3, 5, 6, 2}, {0, 0, 0, 0}, {10, -4, 1, 1}, {5, 5, 51, 11}};
-        System.out.println(sumOfPositiveElements(array));
-        print(array);
-        reset(array);
-        print(array);
-        System.out.println(findMax(array));
+        int[][] array = {{3, 5, 6, 2}, {1, 1, 1, 1}, {10, -4, 1, 1}, {5, 5, 51, 11}};
+       // System.out.println(sumOfPositiveElements(array));
+      //  print(array);
+       // reset(array);
+       // print(array);
+      //  System.out.println(findMax(array));
         System.out.println(sumSecondLine(array));
-        cube(10);
+       // cube(10);
 
 
     }
@@ -27,10 +29,10 @@ public class Application {
     }
 
     public static void cube(int size) {
-        int[][] array = new int[size][size];
-
+        char[][] array = new char[size][size];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j]);
                 if (i == 0 || j == 0 || i == size - 1 || j == size - 1) {
                     array[i][j] = '*';
                     System.out.print(array[i][j] + " ");
@@ -77,7 +79,9 @@ public class Application {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (i == 1) {
+                if (array.length < 2) {
+                    return -1;
+                }else if(i == 1){
                     sum += array[i][j];
                 }
             }
