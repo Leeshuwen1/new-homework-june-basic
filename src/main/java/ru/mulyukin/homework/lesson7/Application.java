@@ -5,13 +5,13 @@ import java.lang.reflect.Array;
 public class Application {
     public static void main(String[] args) {
         int[][] array = {{3, 5, 6, 2}, {1, 1, 1, 1}, {10, -4, 1, 1}, {5, 5, 51, 11}};
-       // System.out.println(sumOfPositiveElements(array));
-      //  print(array);
-       // reset(array);
-       // print(array);
-      //  System.out.println(findMax(array));
+        System.out.println(sumOfPositiveElements(array));
+        print(array);
+        reset(array);
+        print(array);
+        System.out.println(findMax(array));
         System.out.println(sumSecondLine(array));
-       // cube(10);
+        cube(10);
 
 
     }
@@ -76,16 +76,19 @@ public class Application {
     }
 
     public static int sumSecondLine(int[][] array) {
+        if (array.length < 2) {
+            return -1;
+        }
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (array.length < 2) {
-                    return -1;
-                }else if(i == 1){
+                if (i == 1) {
                     sum += array[i][j];
                 }
+
             }
         }
         return sum;
     }
 }
+
