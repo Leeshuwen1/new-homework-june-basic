@@ -3,13 +3,14 @@ package ru.mulyukin.homework.lesson9;
 public class Box {
     private String color;
     private int size;
-    private String[] box;
+    private String[] items;
     private boolean open;
 
     public Box(String color, int size) {
         this.color = color;
         this.size = size;
-        this.box = new String[1];
+        this.items = new String[1];
+        this.open = false;
     }
 
     public String getColor() {
@@ -29,39 +30,44 @@ public class Box {
         System.out.println("Коробка цвета " + color + " размер " + size);
     }
 
-    public boolean isOpen(boolean opening) {
-        if (opening == true) {
-            open = opening;
-            System.out.println("Коробка открыта ");
-            return true;
-        } else {
-            System.out.println("Коробка закрыта ");
-            return false;
-        }
+
+    public boolean open() {
+        System.out.println("Вы открыли коробку");
+        return open = true;
+    }
+
+    public boolean close() {
+        System.out.println("Коробка закрыта");
+        return open = false;
     }
 
     public void put(String item) {
         if (open == false) {
             System.out.println("Коробка закрыта, откройте коробку");
             return;
-        }
-        for (int i = 0; i < box.length; i++) {
-            if (box[i] == null) {
-                box[i] = item;
-                System.out.println("Вы положили " + item);
-            } else {
-                System.out.println("Коробка заполнена, вы не можете положить " + item + " освободите коробку");
+        } else {
+            for (int i = 0; i < items.length; i++) {
+                if (items[i] == null) {
+                    items[i] = item;
+                    System.out.println("Вы положили " + item);
+                    return;
+                }
             }
         }
+        System.out.println("Коробка заполнена, вы не можете положить " + item + " освободите коробку");
     }
 
+
     public void output() {
-        for (int i = 0; i < box.length; i++) {
-            if (this.box[i] != null) {
-                box[i] = null;
+        for (int i = 0; i < items.length; i++) {
+            if (this.items[i] != null) {
+                items[i] = null;
                 System.out.println("Коробка пуста, можете положить предмет");
             }
         }
     }
 }
+
+
+
 

@@ -23,15 +23,18 @@ public class Application {
         }
         user.info();
         Box box = new Box("White", 5);
-        box.info();
-        box.isOpen(true);
+
+
+        box.open();
         box.put("Pen");
-        box.put("Car");
+        box.close();
+        box.put("car");
+        box.open();
+        box.put("car");
         box.output();
-        box.put("Car");
-        box.put("Труп");
-        box.setColor("Green");
+        box.put("car");
         box.info();
+        box.setColor("Green");
 
     }
 }
