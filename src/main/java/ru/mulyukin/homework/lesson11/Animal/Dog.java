@@ -1,7 +1,7 @@
-package ru.mulyukin.homework.lesson11;
+package ru.mulyukin.homework.lesson11.Animal;
 
 public class Dog extends Animal{
-    public Dog(String name, Integer runningSpeed, Integer swimmingSpeed, Integer endurance) {
+    public Dog(String name, int runningSpeed, int swimmingSpeed, int endurance) {
         super(name, runningSpeed, swimmingSpeed, endurance);
     }
 
@@ -13,7 +13,7 @@ public class Dog extends Animal{
             System.out.println(name + " Устал");
             return -1;
         }else{
-            System.out.println(name + " проплыл дистацию за " + time + " минуты");
+            System.out.println(name + " проплыл дистацию за " + time + " минуты " + " выносливость " + endurancePower);
         }
         return time;
     }

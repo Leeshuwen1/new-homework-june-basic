@@ -1,7 +1,7 @@
-package ru.mulyukin.homework.lesson11;
+package ru.mulyukin.homework.lesson11.Animal;
 
 public class Cat extends Animal{
-    public Cat(String name, Integer runningSpeed, Integer swimmingSpeed, Integer endurance) {
+    public Cat(String name, int runningSpeed, int swimmingSpeed, int endurance) {
         super(name, runningSpeed, swimmingSpeed, endurance);
     }
     @Override
